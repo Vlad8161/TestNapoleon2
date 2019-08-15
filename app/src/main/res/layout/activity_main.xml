@@ -95,7 +95,6 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/activity_main_email_hint"
                     android:inputType="textEmailAddress"
-                    android:text="g@g.com"
                     android:textColorHint="@color/brownish_grey"
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -117,7 +116,6 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/activity_main_password_hint"
                     android:inputType="textPassword"
-                    android:text="1vV111"
                     android:textColorHint="@color/brownish_grey"
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
