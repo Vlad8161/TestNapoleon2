@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/white</color>
+    <color name="colorPrimaryDark">#f4f4f4</color>
+    <color name="colorAccent">@color/dark_sky_blue</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="tangerine">#ff9b00</color>
+    <color name="tangerine_dark">#B66F00</color>
+    <color name="greyish_brown">#414141</color>
+    <color name="brownish_grey">#6e6e6e</color>
+    <color name="dark_sky_blue">#4e92df</color>
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent">#20000000</color>
+</resources>

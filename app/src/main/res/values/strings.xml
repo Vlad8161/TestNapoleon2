@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">TestNapoleon2</string>
+    <string name="activity_main_title">Авторизация</string>
+    <string name="activity_main_btn_create">Создать</string>
+    <string name="activity_main_email_hint">Электронная почта</string>
+    <string name="activity_main_password_hint">Пароль</string>
+    <string name="activity_main_btn_login_text">Войти</string>
+    <string name="activity_main_wrong_password">Длина пароля должна составлять не менее 6 символов. Пароль должен содержать не менее одной строчной буквы, одной заглавной буквы и одной цифры</string>
+    <string name="activity_main_wrong_email">Введите корректный email</string>
+    <string name="activity_main_unimplemented_message">Фича в разработке :)</string>
+    <string name="activity_main_password_help">Это пароль. Его длина должна составлять не менее 6 символов. Пароль должен содержать не менее одной строчной буквы, одной заглавной буквы и одной цифры</string>
+    <string name="activity_main_city_template">Город: %1$s</string>
+    <string name="activity_main_weather_template">Погода: %1$s</string>
+    <string name="activity_main_temperature_template">Температура: %1$.1f ℃</string>
+    <string name="activity_main_wind_speed_template">Скорость ветра: %1$.1f м/с</string>
+    <string name="activity_main_location_error">Не удалось определить ваши текущие координаты</string>
+    <string name="activity_main_network_error">Не удалось выполнить запрос</string>
+    <string name="activity_main_permission_error">Для работы сервиса требуется разрешение на получение координат</string>
+</resources>
