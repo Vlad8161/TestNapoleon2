@@ -26,7 +26,9 @@ class MainActivity : BaseActivity<MainViewModel>() {
         App.appComponent.inject(this)
         super.onCreate(savedInstanceState)
 
-        locationSource = LocationSource(this)
+        locationSource = LocationSource(this).also {
+            lifecycle.addObserver(it)
+        }
 
         setContentView(R.layout.activity_main)
 
