@@ -23,15 +23,6 @@ class NetworkModule {
     ) : WeatherApi = Retrofit.Builder()
         .addConverterFactory(MoshiConverterFactory.create())
         .baseUrl(networkConfigSource.baseUrl)
-        .client(
-            OkHttpClient.Builder()
-                .addInterceptor { chain ->
-                    val request = chain.request()
-                    Log.d("LOGUSIKI", request.toString())
-                    chain.proceed(request)
-                }
-                .build()
-        )
         .build()
         .create(WeatherApi::class.java)
 }

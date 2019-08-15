@@ -52,7 +52,7 @@ abstract class BaseActivity<T : ViewModel> : AppCompatActivity() {
         }
     }
 
-    fun unusedPermRequestCode(): Int {
+    private fun unusedPermRequestCode(): Int {
         var requestCode = Random.nextInt() and 0xFFFF
         while (permissionMap.containsKey(requestCode)) {
             requestCode = Random.nextInt() and 0xFFFF
