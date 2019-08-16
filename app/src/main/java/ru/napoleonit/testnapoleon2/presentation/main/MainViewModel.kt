@@ -24,6 +24,10 @@ class MainViewModel @Inject constructor(
     val progressVisibility: LiveData<Boolean>
         get() = mProgressVisibility
 
+    private val mNavCommand = MutableLiveData<Event<NavCommand>>()
+    val navCommand: LiveData<Event<NavCommand>>
+        get() = mNavCommand
+
     fun loginClick() {
         mProgressVisibility.value = true
     }
@@ -52,6 +56,10 @@ class MainViewModel @Inject constructor(
         mWeatherMsg.value = Event(Message.ErrorGetLocation)
         mProgressVisibility.value = false
     }
+
+    fun onCreateClick() {
+        mNavCommand.value = Event(NavCommand.ToEmptyScreen)
+    }
 }
 
 sealed class Message {
@@ -59,4 +67,8 @@ sealed class Message {
     object PermissionNotGranted : Message()
     object ErrorGetLocation : Message()
     object NetworkError : Message()
+}
+
+sealed class NavCommand {
+    object ToEmptyScreen: NavCommand()
 }

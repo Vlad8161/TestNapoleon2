@@ -16,4 +16,5 @@
     <string name="activity_main_location_error">Не удалось определить ваши текущие координаты</string>
     <string name="activity_main_network_error">Не удалось выполнить запрос</string>
     <string name="activity_main_permission_error">Для работы сервиса требуется разрешение на получение координат</string>
+    <string name="activity_create_title">Просто пустой экран</string>
 </resources>

@@ -1,4 +1,4 @@
-package ru.napoleonit.testnapoleon2.presentation.main
+package ru.napoleonit.testnapoleon2.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -51,7 +51,9 @@ class LocationSource(
                 newLocationListener,
                 Looper.getMainLooper()
             )
-            uiHandler.postDelayed(newTimeoutRunnable, LOCATION_TIMEOUT)
+            uiHandler.postDelayed(newTimeoutRunnable,
+                LOCATION_TIMEOUT
+            )
         } else {
             fusedLocationProviderClient.lastLocation.addOnCompleteListener {
                 callback(it.result)

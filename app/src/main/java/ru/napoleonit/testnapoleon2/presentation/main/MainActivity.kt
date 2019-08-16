@@ -13,6 +13,8 @@ import ru.napoleonit.testnapoleon2.App
 import ru.napoleonit.testnapoleon2.R
 import ru.napoleonit.testnapoleon2.base.BaseActivity
 import ru.napoleonit.testnapoleon2.interactor.UiWeather
+import ru.napoleonit.testnapoleon2.presentation.create.CreateActivity
+import ru.napoleonit.testnapoleon2.utils.LocationSource
 import ru.napoleonit.testnapoleon2.view.*
 
 
@@ -42,8 +44,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
         }
 
         activityMainBtnCreate.setOnClickListener {
-            Toast.makeText(this, R.string.activity_main_unimplemented_message, Toast.LENGTH_SHORT)
-                .show()
+            viewModel.onCreateClick()
         }
 
         activityMainBtnPasswordHelp.setOnClickListener {
@@ -73,6 +74,16 @@ class MainActivity : BaseActivity<MainViewModel>() {
         viewModel.progressVisibility.observe(this, Observer { visible ->
             activityMainProgress.visible = visible
         })
+
+        viewModel.navCommand.observe(this, Observer { event ->
+            event.unhandledValue?.let { navCommand -> navigate(navCommand) }
+        })
+    }
+
+    private fun navigate(navCommand: NavCommand) = when (navCommand) {
+        NavCommand.ToEmptyScreen -> {
+            toScreen<CreateActivity>()
+        }
     }
 
     @SuppressLint("MissingPermission")
@@ -160,5 +171,6 @@ class MainActivity : BaseActivity<MainViewModel>() {
             add(getString(R.string.activity_main_wind_speed_template, windSpeed))
         }
     }.joinToString(", ")
+
 }
 

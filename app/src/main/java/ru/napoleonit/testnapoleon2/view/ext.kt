@@ -2,6 +2,7 @@ package ru.napoleonit.testnapoleon2.view
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.core.view.ViewCompat
@@ -55,3 +56,6 @@ fun Activity.hideKeyboard() {
         .hideSoftInputFromWindow((currentFocus ?: View(this)).windowToken, 0)
 }
 
+inline fun <reified T : Activity> Activity.toScreen() {
+    startActivity(Intent(this, T::class.java))
+}
