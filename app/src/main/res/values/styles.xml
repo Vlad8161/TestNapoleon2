@@ -12,4 +12,8 @@
         <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
 
+    <style name="AppThemeStatusBar" parent="AppTheme">
+
+    </style>
+
 </resources>

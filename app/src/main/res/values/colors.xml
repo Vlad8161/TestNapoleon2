@@ -12,4 +12,5 @@
     <color name="dark_sky_blue">#4e92df</color>
     <color name="transparent">#00000000</color>
     <color name="semi_transparent">#20000000</color>
+    <color name="status_bar_color">#f4f4f4</color>
 </resources>
