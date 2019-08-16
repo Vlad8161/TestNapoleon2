@@ -49,7 +49,33 @@ fun String.validatePassword(): Boolean {
     return true
 }
 
-fun String.validateEmail(): Boolean = Pattern.matches("^\\w+@[a-z]+(\\.[a-z]{2,})+\$", this)
+fun String.validateEmail(): Boolean {
+    val (name, host) = split("@").takeIf { it.size == 2 }
+        ?.let { it[0] to it[1] }
+        ?: return false
+
+    if (name.any { !it.isDigit() && !it.isLowerCase() && it != '.' && it != '_' }) {
+        return false
+    }
+
+    if (host.any { !it.isDigit() && !it.isLowerCase() && it != '.' }) {
+        return false
+    }
+
+    val hostParts = host.split(".")
+
+    if (hostParts.size < 2) {
+        return false
+    }
+
+    for (i in 1 until hostParts.size) {
+        if (hostParts[i].length < 2) {
+            return false
+        }
+    }
+
+    return true
+}
 
 fun Activity.hideKeyboard() {
     (getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager)
